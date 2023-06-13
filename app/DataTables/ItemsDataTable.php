@@ -26,7 +26,7 @@ class ItemsDataTable extends DataTable
                 $images = $row->getMedia('images');
                 foreach ($images as $image) {
                     Debugbar::info($image);
-                    return "<img src='{$image->getUrl('thumb')}' >";
+                    return "<img src='{$image->getUrl()}' >";
                 }
             })
             ->addColumn('action', function ($row) {

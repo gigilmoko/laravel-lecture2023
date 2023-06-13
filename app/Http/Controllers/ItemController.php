@@ -99,8 +99,9 @@ class ItemController extends Controller
         $images = $item->getMedia('images');
         // dd($images);
         // foreach($images as $image) {
-        //     if($image[0] !== null) {
-        //         DebugBar::info($image[0]->getPath());
+        //     if($image !== null) {
+        //         // dump($image->getUrl());
+        //         // DebugBar::info($image[0]->getPath());
         //     }
         //     // DebugBar::info($image[0]);
         // }
