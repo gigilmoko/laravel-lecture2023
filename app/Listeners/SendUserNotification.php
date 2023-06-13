@@ -42,6 +42,7 @@ class SendUserNotification
                 $message->from('admin@test.com', 'Admin');
                 $message->to($email, $customer);
                 $message->subject("Thank you !  {$customer} ");
+                $message->attach($file);
             }
         );
     }
