@@ -3,8 +3,8 @@
     <div class="container">
         @foreach($images as $image)
             {{-- @if ($image[0] !== null) --}}
-            <img src="{{$image->getUrl()}}" alt="{{$image->file_name}}"
-            {{-- <img src="{{$image->getUrl('thumb')}}" alt="{{$image->file_name}}"> --}}
+            {{-- <img src="{{$image->getUrl()}}" alt="{{$image->file_name}}" --}}
+            <img src="{{$image->getUrl('thumb')}}" alt="{{$image->file_name}}">
            
             {{-- @endif --}}
       
