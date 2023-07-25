@@ -7,6 +7,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SearchController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,7 +35,7 @@ Route::post('/import', [ItemController::class, 'import'])->name('item-import');
 Route::resource('item', ItemController::class)->middleware('role:admin,customer');
 Route::post('item/store-media', [ItemController::class, 'storeMedia'])->name('item.storeMedia')->middleware('role:admin');
 Route::resource('customer', CustomerController::class);
-
+Route::post('/search',[SearchController::class, 'search'])->name('search');
 Route::prefix('user')->group(function () {
     Route::get('/signup', [UserController::class, 'getSignup']);
     Route::post('/signup', [UserController::class, 'postSignup'])->name('user.signup');

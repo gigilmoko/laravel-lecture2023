@@ -1,8 +1,9 @@
 @extends('layouts.master')
 @if(Auth::check() && Auth::user()->role === 'admin')
     @section('content')
+    @include('layouts.flash-messages')
     <div class="row">
-        @include('layouts.flash-messages')
+        
         <div class="col-md-8 col-md-offset-2">
             <h1>All Orders</h1>
             <hr>
