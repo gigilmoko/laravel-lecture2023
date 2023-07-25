@@ -133,8 +133,6 @@ class ItemController extends Controller
 
     public function getItems()
     {
-        // $items = Item::all();
-        // $items = DB::table('item')->join('stock','item.item_id', '=', 'stock.item_id')->get();
         $items = Item::with('stock')
             ->whereHas('stock')
             ->paginate(4);
@@ -142,20 +140,11 @@ class ItemController extends Controller
     }
     public function addToCart($id)
     {
-        // dd(Session::has('cart'));
         $item = Item::find($id);
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
-        // dd($oldCart);
         $cart = new Cart($oldCart);
-        // dd($cart);
         $cart->add($item, $item->item_id);
-        // $request->session()->put('cart', $cart);
-        // dd($cart);
         Session::put('cart', $cart);
-        // dd(Session::get('cart'));
-        // $request->session()->save();
-        // Session::save();
-        // dump( Session::get('cart'));
         return redirect()
             ->route('getItems')
             ->with('message', 'item added to cart');
@@ -167,7 +156,6 @@ class ItemController extends Controller
         }
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
-        // dd($oldCart);
         return view('shop.shopping-cart', [
             'items' => $cart->items,
             'totalPrice' => $cart->totalPrice,

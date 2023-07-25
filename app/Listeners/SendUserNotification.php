@@ -33,7 +33,7 @@ class SendUserNotification
         $orderinfoId = $event->order->orderinfo_id;
         $email = $event->email;
         $customer = $event->customer->lname . ' ' . $event->customer->fname;
-        $file = Storage::path('images/test.png');
+        $file = Storage::path('public/images/BG.jpg');
         // dd($file);
         Mail::send(
             'email.user_notification',

@@ -5,9 +5,9 @@
             {{-- @if ($image[0] !== null) --}}
             {{-- <img src="{{$image->getUrl()}}" alt="{{$image->file_name}}" --}}
             <img src="{{$image->getUrl('thumb')}}" alt="{{$image->file_name}}">
-           
+
             {{-- @endif --}}
-      
+
         @endforeach
         <form action="{{ route('item.store') }}" method="POST">
             @csrf

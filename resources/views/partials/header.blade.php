@@ -9,12 +9,12 @@
       <li class="nav-item active">
         <a class="nav-link" href="{{ route('getItems') }}">Home<span class="sr-only">(current)</span></a>
       </li>
-     
+
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle"></i>
           User Management
         </a>
-       
+
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           @if(Auth::check() && Auth::user()->role === 'admin')
             <a class="dropdown-item" href="{{route('admin.orders')}}">Orders </a>
